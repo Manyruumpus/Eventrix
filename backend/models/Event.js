@@ -6,9 +6,11 @@ const eventSchema = new mongoose.Schema({
     eventPic: { type: String, required: true },
     eventVenue: { type: String, required: true },
     eventDate: { type: Date, required: true, index: true },
+
     registeredUsers: [{
         email: { type: String, required: true },
-        registeredAt: { type: Date, default: Date.now }
+        registeredAt: { type: Date, default: Date.now },
+        regustered: { type: Boolean }
     }]
 });
 

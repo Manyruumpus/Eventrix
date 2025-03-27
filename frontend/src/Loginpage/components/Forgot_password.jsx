@@ -20,7 +20,10 @@ function ForgotPassword() {
         setSuccess('');
 
         try {
-            const response = await axios.post('http://localhost:5000/api/otp/send-otp', { email });
+            const response = await axios.post('http://localhost:5000/api/otp/send-otp', {
+                email,
+                isForgotPassword: true
+            });
             if (response.data.success) {
                 setSuccess('OTP sent to your email.');
                 setShowOtpInput(true);
@@ -100,14 +103,27 @@ function ForgotPassword() {
                                 exit={{ opacity: 0, scale: 0.8 }}
                                 transition={{ duration: 0 }}
                                 className="login_message login_message-error forgotpassword-message"
-                                style={{ position: "absolute", top: "-18px", left: "0", right: "0", textAlign: "center" }}
-                            >
+                                style={{
+                                    position: "fixed",
+                                    bottom: "7.5%",
+                                    left: "40%",
+                                    right: "40%",
+                                    transform: "translateX(-50%)",
+                                    zIndex: 2
+                                }}                            >
                                 {error}
                             </motion.div>
                         )}
                     </AnimatePresence>
                     {success && (
-                        <div className="login_message login_message-success forgotpassword-message" style={{ position: "absolute", top: "-18px", left: "0", right: "0", textAlign: "center" }}>
+                        <div className="login_message login_message-success forgotpassword-message" style={{
+                            position: "fixed",
+                            bottom: "7.5%",
+                            left: "40%",
+                            right: "40%",
+                            transform: "translateX(-50%)",
+                            zIndex: 2
+                        }}>
                             {success}
                         </div>
                     )}
@@ -119,7 +135,7 @@ function ForgotPassword() {
                             key={1}
                             type="text"
                             title="Enter your email*"
-                            placeholder="Your email (abc@gmail.com)"
+                            placeholder="Your email (abc@iitk.ac.in)"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />

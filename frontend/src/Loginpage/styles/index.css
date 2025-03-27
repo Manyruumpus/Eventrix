@@ -71,7 +71,7 @@ input {
   overflow: auto;
   min-height: calc(100* var(--vh));
   padding-top: 6rem;
-  padding-bottom: 5rem;
+  padding-bottom: 5.3rem;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
@@ -108,6 +108,7 @@ input {
 .signup_align-center {
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 6%;
 }
 
 .signup_tabs-menu {
@@ -376,7 +377,7 @@ p {
 .tab-anim:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #2e2d2d;
+  background-color: #3d3b3b;
 }
 
 
@@ -442,7 +443,7 @@ p {
 .login_footer {
   position: absolute;
   left: 0%;
-  top: auto;
+  top: 100%;
   right: 0%;
   bottom: 0%;
   display: flex;
@@ -451,7 +452,7 @@ p {
   padding-right: 5%;
   padding-left: 5%;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .password_login {
@@ -592,4 +593,24 @@ p {
   align-self: center;
   max-width: 30%;
   justify-self: center;
+}
+
+.signup_form_field-wrapper-temp {
+  margin-bottom: 10%;
+}
+
+.signup_tab-link.active {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgb(255, 255, 255);
+}
+
+.tab-anim.active {
+  background-color: #000000;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tab-anim.active:hover {
+  transform: translateY(-5px);
+  background-color: #252424;
 }
